@@ -1,0 +1,7 @@
+interface:
+  display_name: "Doubao Skills"
+  short_description: "适用于豆包的GEOskills"
+  default_prompt: "Use $doubao-skills to generate a Doubao GEO off-platform content matrix for a local business."
+
+policy:
+  allow_implicit_invocation: true
