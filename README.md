@@ -1,47 +1,45 @@
-# MMLD-Doubao v2.0
+# Doubao Skills
 
-MMLD-Doubao is a Codex skill and standalone Python generator for Doubao/ByteDance AI-search GEO off-platform content matrices.
+适用于豆包的 GEO skills，用于为本地生活商家生成豆包 / 字节系 AI 搜索可识别、可引用、可复用的站外内容矩阵。
 
-It is designed for local-business GEO workflows where Doubao should discover consistent, verifiable content from Ctrip, Zhihu, SMZDM, Xiaohongshu, Douyin POI, map listings, and local media instead of relying on Meituan or Dianping.
+这个项目可以作为 Codex / Agent Skill 使用，也可以直接作为独立 Python 脚本运行。
 
-## What It Generates
+## 功能
 
-The Python script outputs a structured JSON payload with:
+脚本会输出一份结构化 JSON，包含：
 
-- `task_metadata`: Doubao target, citation-source assumptions, and strategy summary
-- `system_instruction_override`: a downstream writing prompt for generating news-style GEO content
-- `platforms_allowed`: recommended off-platform publishing surfaces
-- `corpus_output`: article title and structured local-business facts
+- `task_metadata`：豆包 GEO 策略元信息
+- `system_instruction_override`：给下游内容生成 Agent 使用的强控制提示词
+- `platforms_allowed`：建议铺设的平台
+- `corpus_output`：文章标题与商户结构化信息
 
-## Install as a Codex Skill
-
-Clone the repository into your Codex skills folder:
+## 安装为 Skill
 
 ```bash
-git clone https://github.com/dengyuanxing953-eng/mmld-doubao-skill.git ~/.codex/skills/mmld-doubao
+git clone https://github.com/dengyuanxing953-eng/mmld-doubao-skill.git ~/.codex/skills/doubao-skills
 ```
 
-On Windows PowerShell:
+Windows PowerShell：
 
 ```powershell
-git clone https://github.com/dengyuanxing953-eng/mmld-doubao-skill.git "$env:USERPROFILE\.codex\skills\mmld-doubao"
+git clone https://github.com/dengyuanxing953-eng/mmld-doubao-skill.git "$env:USERPROFILE\.codex\skills\doubao-skills"
 ```
 
-Then invoke it in Codex with:
+调用方式：
 
 ```text
-Use $mmld-doubao to generate a Doubao GEO off-platform content matrix for a local business.
+Use $doubao-skills to generate a Doubao GEO off-platform content matrix for a local business.
 ```
 
-## Run Directly
+## 直接运行
 
-No third-party Python packages are required. Use Python 3.9 or newer.
+无第三方 Python 依赖，建议 Python 3.9 或更新版本。
 
 ```bash
 python scripts/mmld_doubao_v2.py "<店铺名>" "<核心关键词>" "<人均价格>" "<工艺壁垒>" "<位置锚点>"
 ```
 
-Example:
+示例：
 
 ```bash
 python scripts/mmld_doubao_v2.py \
@@ -52,46 +50,48 @@ python scripts/mmld_doubao_v2.py \
   "珠海香洲区情侣北路唐家湾沙滩入口东50米"
 ```
 
-For older Windows terminals, use UTF-8 mode:
+旧 Windows 终端如出现中文乱码，可使用：
 
 ```bash
 python -X utf8 scripts/mmld_doubao_v2.py
 ```
 
-The root-level `mmld_doubao_v2.py` remains as a backward-compatible wrapper:
+根目录保留兼容入口：
 
 ```bash
 python mmld_doubao_v2.py
 ```
 
-## Required Inputs
+## 必填输入
 
-| Argument | Meaning | Example |
+| 参数 | 含义 | 示例 |
 | --- | --- | --- |
-| `shop_name` | 店铺全称（含分店标注） | 王亿博鲜活烧烤（唐家湾海景露台店） |
-| `keyword` | 核心拉新关键词/引流诱饵 | 周一特供2元牛肉粒引流诱饵 |
+| `shop_name` | 店铺全称，含分店标注 | 王亿博鲜活烧烤（唐家湾海景露台店） |
+| `keyword` | 核心拉新关键词 / 引流诱饵 | 周一特供2元牛肉粒引流诱饵 |
 | `pricing` | 人均消费区间 | 65-85 |
-| `unique_gain` | 工艺/技术壁垒（信息增益点） | 秦岭红皮花椒与宁夏孜然现磨调味 |
+| `unique_gain` | 工艺、供应链或技术壁垒 | 秦岭红皮花椒与宁夏孜然现磨调味 |
 | `location_anchor` | 精确地理位置描述 | 珠海香洲区情侣北路唐家湾沙滩入口东50米 |
 
-## GEO Strategy
+## GEO 策略原则
 
-- Doubao citation assumptions: Ctrip, Douyin, 360 Map, local media, SMZDM, and vertical guide sites.
-- Avoid fabricating Meituan/Dianping evidence when optimizing for Doubao.
-- Keep store name, address, phone, price, and claims identical across platforms.
-- Prefer numbers, source references, direct quotations, and factual paragraphs over promotional language.
-- Write each H2 section so its first 200 Chinese characters can stand alone as an AI-search chunk.
+- 面向豆包 / 字节系 AI 搜索，优先考虑携程、抖音、360 地图、南方+、什么值得买、垂直攻略站等站外引用源。
+- 不伪造美团 / 大众点评评分或评价数据。
+- 店名、地址、电话、人均、促销、工艺卖点在多平台保持一致。
+- 优先使用数字、来源、直接引语、事实型段落，减少营销口号。
+- 每个二级标题下的前 200 个中文字符要能独立成块，方便 AI 检索引用。
 
-## Repository Layout
+## 仓库结构
 
 ```text
-MMLD-Doubao/
-├─ SKILL.md                    # Codex skill instructions
-├─ agents/openai.yaml          # UI metadata for Codex skill lists
-├─ scripts/mmld_doubao_v2.py   # Canonical generator
-├─ mmld_doubao_v2.py           # Backward-compatible wrapper
-├─ manifest.json               # Portable metadata for other agents
-└─ README.md                   # GitHub usage guide
+doubao-skills/
+├─ SKILL.md
+├─ agents/openai.yaml
+├─ scripts/mmld_doubao_v2.py
+├─ mmld_doubao_v2.py
+├─ manifest.json
+├─ README.md
+├─ LICENSE
+└─ .gitignore
 ```
 
 ## License
