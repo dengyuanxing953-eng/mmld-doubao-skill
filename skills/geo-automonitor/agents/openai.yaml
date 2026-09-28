@@ -1,0 +1,6 @@
+interface:
+  display_name: "GEO 来源观测与复测"
+  short_description: "分析跨AI来源观测，保留缺失与阻塞，区分检索候选和答案正文采用"
+  default_prompt: "Use $geo-automonitor to compare AI source observations without mixing API, seeded URL tests, missing captures or natural consumer answers."
+policy:
+  allow_implicit_invocation: true

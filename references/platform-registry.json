@@ -1,0 +1,725 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-09-28",
+  "purpose": "来源关系与发布能力分开；不是官方权重或永久白名单",
+  "evidence_bases": [
+    "observed_url",
+    "observed_label",
+    "official_consumer",
+    "official_api",
+    "historical_study",
+    "self_report",
+    "unknown"
+  ],
+  "platforms": [
+    {
+      "id": "toutiao",
+      "name": "今日头条",
+      "kind": "open_content",
+      "domains": [
+        "toutiao.com"
+      ],
+      "formats": [
+        "article",
+        "image_text"
+      ],
+      "requirements": "账号与内容审核；引用AI声明按实际选择",
+      "official_reference": "https://mp.toutiao.com/",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "douyin",
+      "name": "抖音",
+      "kind": "open_content",
+      "domains": [
+        "douyin.com",
+        "iesdouyin.com"
+      ],
+      "formats": [
+        "image_text",
+        "article",
+        "video"
+      ],
+      "requirements": "核对当前账号与图文/文章入口；不要求图文先转视频",
+      "official_reference": "https://creator.douyin.com/",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "zhihu",
+      "name": "知乎",
+      "kind": "open_content",
+      "domains": [
+        "zhihu.com"
+      ],
+      "formats": [
+        "article",
+        "answer",
+        "image_text"
+      ],
+      "requirements": "账号权限、真实身份/利益披露；不冒充学员",
+      "official_reference": "https://www.zhihu.com/org_use_norm",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "sohu",
+      "name": "搜狐号",
+      "kind": "open_content",
+      "domains": [
+        "sohu.com"
+      ],
+      "formats": [
+        "article",
+        "image_text"
+      ],
+      "requirements": "入驻与审核；不把全站媒体内容视为自己可发布",
+      "official_reference": "https://mp.sohu.com/",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "bilibili",
+      "name": "哔哩哔哩",
+      "kind": "open_content",
+      "domains": [
+        "bilibili.com"
+      ],
+      "formats": [
+        "article",
+        "image_text",
+        "video"
+      ],
+      "requirements": "当前账号投稿能力与素材版权",
+      "official_reference": "https://www.bilibili.com/blackboard/protocal/licence.html",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "wechat",
+      "name": "微信公众号",
+      "kind": "open_content",
+      "domains": [
+        "mp.weixin.qq.com"
+      ],
+      "formats": [
+        "article",
+        "image_text"
+      ],
+      "requirements": "官方号编辑权限、公开可读性和营销限制",
+      "official_reference": "https://mp.weixin.qq.com/",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "baijiahao",
+      "name": "百家号",
+      "kind": "open_content",
+      "domains": [
+        "baijiahao.baidu.com"
+      ],
+      "formats": [
+        "article",
+        "image_text"
+      ],
+      "requirements": "保存正文与复核实际编辑器状态；审核通过才算发布",
+      "official_reference": "https://baijiahao.baidu.com/",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "qqnews",
+      "name": "腾讯新闻/企鹅号",
+      "kind": "open_content",
+      "domains": [
+        "news.qq.com",
+        "new.qq.com",
+        "om.qq.com"
+      ],
+      "formats": [
+        "article",
+        "image_text"
+      ],
+      "requirements": "经腾讯内容开放平台入驻；发布入口不是所有新闻域名",
+      "official_reference": "https://om.qq.com/",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "smzdm",
+      "name": "什么值得买",
+      "kind": "open_content",
+      "domains": [
+        "smzdm.com"
+      ],
+      "formats": [
+        "article",
+        "image_text"
+      ],
+      "requirements": "消费生活场景适配；利益相关、AI声明；审核状态单独核验",
+      "official_reference": "https://post.smzdm.com/about/",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "xiaohongshu",
+      "name": "小红书",
+      "kind": "open_content",
+      "domains": [
+        "xiaohongshu.com"
+      ],
+      "formats": [
+        "image_text"
+      ],
+      "requirements": "图文上传；商业合作与普通笔记规则分开；不伪装体验",
+      "official_reference": "https://pgy.xiaohongshu.com/help/detail?id=6495c527d1eedeeb48fb18b1f875650e&userType=4",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "qcc",
+      "name": "企查查",
+      "kind": "entity_profile",
+      "domains": [
+        "qcc.com"
+      ],
+      "formats": [
+        "structured_fields",
+        "logo"
+      ],
+      "requirements": "认证本企业；未证实开放文章或正文多图",
+      "official_reference": "https://help.qcc.com/spt/support/questionDetails?helpId=75b48d6e1e4f41cab38d0786dadcf6bb",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "shuidi",
+      "name": "水滴信用",
+      "kind": "entity_profile",
+      "domains": [
+        "shuidi.cn"
+      ],
+      "formats": [
+        "enterprise_text_images"
+      ],
+      "requirements": "企业认领；企业自述、产品服务和图片，不是开放文章流",
+      "official_reference": "https://baike.shuidi.cn/wiki/extend/help",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "qixin",
+      "name": "启信宝",
+      "kind": "entity_profile",
+      "domains": [
+        "qixin.com"
+      ],
+      "formats": [
+        "structured_fields"
+      ],
+      "requirements": "认证企业品牌概况/产品服务/伙伴；正文配图待核",
+      "official_reference": "https://static-cdn-p.qixin.com/policy/qixinbao_Android/certification_service_zh-cn.html",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "tianyancha",
+      "name": "天眼查",
+      "kind": "restricted_ugc",
+      "domains": [
+        "tianyancha.com"
+      ],
+      "formats": [
+        "community_question_images"
+      ],
+      "requirements": "实名社区互动；不当作独立媒体长文，企业可改字段待核",
+      "official_reference": "https://static.tianyancha.com/webview/useragreement_v1.html",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "aiqicha",
+      "name": "爱企查",
+      "kind": "reference_only_or_unknown",
+      "domains": [
+        "aiqicha.baidu.com"
+      ],
+      "formats": [],
+      "requirements": "本轮未核验普通图文发布能力",
+      "official_reference": "https://aiqicha.baidu.com/",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "cctalk",
+      "name": "CCtalk",
+      "kind": "course_product",
+      "domains": [
+        "cctalk.com",
+        "cctalk.net"
+      ],
+      "formats": [
+        "course_page",
+        "graphic_audio_lesson"
+      ],
+      "requirements": "个人/机构创作者入驻；只用于真实课程与教学",
+      "official_reference": "https://www.cctalk.com/faq/100174",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "xiaoe",
+      "name": "小鹅通",
+      "kind": "course_product",
+      "domains": [
+        "xiaoe-tech.com",
+        "xet.pomoho.com"
+      ],
+      "formats": [
+        "graphic_product",
+        "course_page"
+      ],
+      "requirements": "商家店铺权限；图文单品、专栏或课时访问权限可能受限",
+      "official_reference": "https://helpcenter.xiaoe-tech.com/",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "blackcat",
+      "name": "黑猫投诉",
+      "kind": "complaint_case",
+      "domains": [
+        "tousu.sina.com.cn",
+        "tousu.sina.cn"
+      ],
+      "formats": [
+        "complaint_evidence",
+        "merchant_reply"
+      ],
+      "requirements": "真实消费纠纷及有权主体回复；不供营销占位",
+      "official_reference": "https://sh.tousu.sina.com.cn/articles/view/144/",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "xfb315",
+      "name": "消费保",
+      "kind": "complaint_case",
+      "domains": [
+        "xfb315.com"
+      ],
+      "formats": [
+        "complaint_evidence",
+        "merchant_reply"
+      ],
+      "requirements": "真实投诉和证明材料；平台汇总不能归单商家",
+      "official_reference": "https://www.xfb315.com/article/134152.html",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "boss",
+      "name": "BOSS直聘",
+      "kind": "recruitment",
+      "domains": [
+        "zhipin.com"
+      ],
+      "formats": [
+        "job",
+        "employer_profile"
+      ],
+      "requirements": "真实招聘；企业关系核验；当前相册权益待核",
+      "official_reference": "https://www.zhipin.com/web/common/protocol/feature-intro.html",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "liepin",
+      "name": "猎聘",
+      "kind": "recruitment",
+      "domains": [
+        "liepin.com"
+      ],
+      "formats": [
+        "job",
+        "employer_profile"
+      ],
+      "requirements": "真实招聘/职业内容，状态帖配图能力待核",
+      "official_reference": "https://ir.liepin.com/product/",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "zhaopin",
+      "name": "智联招聘",
+      "kind": "recruitment",
+      "domains": [
+        "zhaopin.com"
+      ],
+      "formats": [
+        "job",
+        "employer_profile"
+      ],
+      "requirements": "招聘主体实名与企业身份认证",
+      "official_reference": "https://www.zhaopin.com/",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "51job",
+      "name": "前程无忧",
+      "kind": "recruitment",
+      "domains": [
+        "51job.com"
+      ],
+      "formats": [
+        "job",
+        "employer_profile"
+      ],
+      "requirements": "真实招聘；公司页当前图片能力待核",
+      "official_reference": "https://ehire.51job.com/help/wenti.htm",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "zsxq",
+      "name": "知识星球",
+      "kind": "restricted_ugc",
+      "domains": [
+        "zsxq.com"
+      ],
+      "formats": [
+        "topic_images"
+      ],
+      "requirements": "星主权限、付费、外部分享与预览开关影响公开性",
+      "official_reference": "https://help-docs.zsxq.com/faq/faqs.html",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "baidu_baike",
+      "name": "百度百科",
+      "kind": "reference_only_or_unknown",
+      "domains": [
+        "baike.baidu.com"
+      ],
+      "formats": [],
+      "requirements": "词条核验/更正机制，不是企业任意文章流",
+      "official_reference": "https://baike.baidu.com/",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "sogou_baike",
+      "name": "搜狗百科",
+      "kind": "reference_only_or_unknown",
+      "domains": [
+        "baike.sogou.com"
+      ],
+      "formats": [],
+      "requirements": "百科词条，非普通图文发稿渠道",
+      "official_reference": "https://baike.sogou.com/",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "netease",
+      "name": "网易",
+      "kind": "reference_only_or_unknown",
+      "domains": [
+        "163.com"
+      ],
+      "formats": [],
+      "requirements": "来源标题出现；本輪未核验当前入驻及账号发布权限",
+      "official_reference": "https://www.163.com/",
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    },
+    {
+      "id": "gov_academic",
+      "name": "政府/学术/权威资料",
+      "kind": "reference_only_or_unknown",
+      "domains": [],
+      "formats": [],
+      "requirements": "按实际机构与编辑/投稿权限核验，不能借域名发布伪新闻",
+      "official_reference": null,
+      "checked_on": "2026-09-27",
+      "current_account_verified": false
+    }
+  ],
+  "engines": [
+    {
+      "id": "doubao",
+      "name": "豆包",
+      "entry": "https://www.doubao.com/chat/",
+      "product_type": "assistant",
+      "questionnaire_status": "answered",
+      "source_categories": [
+        "训练阶段形成的模型知识",
+        "用户提供的上下文",
+        "联网检索公开网页",
+        "当次检索结果中的来源链接"
+      ],
+      "source_links": [
+        {
+          "platform_ids": [
+            "douyin",
+            "toutiao",
+            "cctalk",
+            "xiaoe",
+            "qcc",
+            "shuidi",
+            "qixin",
+            "blackcat",
+            "xfb315",
+            "boss",
+            "liepin",
+            "bilibili",
+            "sohu",
+            "tianyancha"
+          ],
+          "evidence_basis": "observed_url",
+          "surface": "consumer_web",
+          "evidence_reference": "local_observation_redacted",
+          "note": "2026-09-27有限商业查询；只共享平台级方法，原始客户记录不在仓库；未逐句验证全部支持关系"
+        },
+        {
+          "platform_ids": [
+            "toutiao"
+          ],
+          "evidence_basis": "historical_study",
+          "surface": "consumer_web",
+          "evidence_reference": "https://m.thepaper.cn/newsDetail_forward_30713030",
+          "note": "2025-04-24新闻实验，不是当前通用权重"
+        }
+      ],
+      "official_reference": "https://www.doubao.com/legal/terms",
+      "fixed_priority": "unknown"
+    },
+    {
+      "id": "yuanbao",
+      "name": "腾讯元宝",
+      "entry": "https://yuanbao.tencent.com/",
+      "product_type": "assistant_multi_model",
+      "questionnaire_status": "answered",
+      "source_categories": [
+        "训练阶段形成的模型知识",
+        "用户提供的上下文",
+        "联网检索公开网页",
+        "当次检索结果中的来源链接"
+      ],
+      "source_links": [
+        {
+          "platform_ids": [
+            "qqnews",
+            "sogou_baike"
+          ],
+          "evidence_basis": "official_api",
+          "surface": "api_search",
+          "evidence_reference": "https://cloud.tencent.com/product/wsa",
+          "note": "官方搜索产品覆盖腾讯新闻、搜狗百科、企鹅号及全网；不等于App逐题实际引用"
+        },
+        {
+          "platform_ids": [
+            "wechat"
+          ],
+          "evidence_basis": "historical_study",
+          "surface": "consumer_web",
+          "evidence_reference": "https://m.thepaper.cn/newsDetail_forward_30713030",
+          "note": "2025新闻样本；元宝内DeepSeek不等于DeepSeek官网"
+        }
+      ],
+      "fixed_priority": "unknown"
+    },
+    {
+      "id": "qianwen",
+      "name": "千问",
+      "entry": "https://www.qianwen.com/",
+      "product_type": "assistant",
+      "questionnaire_status": "answered",
+      "source_categories": [
+        "训练阶段形成的模型知识",
+        "用户提供的上下文",
+        "联网检索公开网页",
+        "当次检索结果中的来源链接"
+      ],
+      "source_links": [],
+      "source_site_status": "具体站点名单未核实；自述新闻、百科、官方公告、论坛类别",
+      "official_reference": "https://terms.alicdn.com/legal-agreement/terms/c_end_product_protocol/20231011201348415/20231011201348415.html",
+      "fixed_priority": "unknown"
+    },
+    {
+      "id": "wenxin",
+      "name": "百度文心",
+      "entry": "https://wenxin.baidu.com/",
+      "product_type": "assistant",
+      "questionnaire_status": "answered",
+      "source_categories": [
+        "训练阶段形成的模型知识",
+        "用户提供的上下文",
+        "联网检索公开网页",
+        "当次检索结果中的来源链接"
+      ],
+      "source_links": [
+        {
+          "platform_ids": [
+            "baijiahao",
+            "baidu_baike"
+          ],
+          "evidence_basis": "historical_study",
+          "surface": "consumer_web",
+          "evidence_reference": "https://m.thepaper.cn/newsDetail_forward_30713030",
+          "note": "历史新闻实验"
+        },
+        {
+          "platform_ids": [
+            "zhihu",
+            "bilibili",
+            "tianyancha",
+            "aiqicha",
+            "wechat",
+            "netease",
+            "sohu",
+            "blackcat",
+            "xfb315"
+          ],
+          "evidence_basis": "observed_label",
+          "surface": "consumer_web",
+          "evidence_reference": "local_observation_redacted",
+          "note": "历史来源面板标题观察；未全部取得原URL，不能计算域名占比"
+        }
+      ],
+      "fixed_priority": "unknown"
+    },
+    {
+      "id": "qingyan",
+      "name": "智谱清言",
+      "entry": "https://chatglm.cn/",
+      "product_type": "assistant",
+      "questionnaire_status": "answered",
+      "source_categories": [
+        "训练阶段形成的模型知识",
+        "用户提供的上下文",
+        "联网检索公开网页",
+        "当次检索结果中的来源链接"
+      ],
+      "source_links": [
+        {
+          "platform_ids": [
+            "qqnews",
+            "zhihu"
+          ],
+          "evidence_basis": "official_api",
+          "surface": "api_search",
+          "evidence_reference": "https://docs.bigmodel.cn/cn/guide/tools/web-search",
+          "note": "2026-09-11资料涉及搜狗/夸克线路；9月28日打开失败，待重核；不是清言默认引用"
+        }
+      ],
+      "consumer_site_status": "unknown",
+      "fixed_priority": "unknown"
+    },
+    {
+      "id": "metaso",
+      "name": "秘塔AI搜索",
+      "entry": "https://metaso.cn/",
+      "product_type": "ai_search",
+      "questionnaire_status": "answered",
+      "source_categories": [
+        "训练阶段形成的模型知识",
+        "用户提供的上下文",
+        "联网检索公开网页",
+        "当次检索结果中的来源链接"
+      ],
+      "source_links": [
+        {
+          "platform_ids": [
+            "zhihu"
+          ],
+          "evidence_basis": "observed_label",
+          "surface": "consumer_web",
+          "evidence_reference": "local_observation_redacted",
+          "note": "历史面板有知乎等标题，来源不完整"
+        }
+      ],
+      "source_labels_only": [
+        "知识岛",
+        "LinkAI RAG知识库平台优化之路",
+        "Remarque",
+        "大模型的联网搜索功能：技术架构与应用分析"
+      ],
+      "label_note": "2026-09-27同题回答的标签；未拿到全部实际域名，不能凭标题推断平台或合作关系",
+      "fixed_priority": "unknown"
+    },
+    {
+      "id": "zhida",
+      "name": "知乎直答",
+      "entry": "https://zhida.zhihu.com/",
+      "product_type": "ai_search",
+      "questionnaire_status": "answered",
+      "source_categories": [
+        "训练阶段形成的模型知识",
+        "用户提供的上下文",
+        "联网检索公开网页",
+        "当次检索结果中的来源链接"
+      ],
+      "source_links": [
+        {
+          "platform_ids": [
+            "zhihu"
+          ],
+          "evidence_basis": "self_report",
+          "surface": "consumer_web",
+          "evidence_reference": "local_public_questionnaire",
+          "note": "2026-09-27自述以知乎内容为中心；没有固定权重"
+        },
+        {
+          "platform_ids": [
+            "zhihu"
+          ],
+          "evidence_basis": "observed_label",
+          "surface": "consumer_web",
+          "evidence_reference": "local_observation_redacted",
+          "note": "历史来源面板观察"
+        }
+      ],
+      "unverified_external_domains": [
+        "eduzs.org.cn",
+        "cc518.com"
+      ],
+      "external_note": "只保留出现线索；投稿资格、版权与主体未核验，不自动纳入发布阵地",
+      "fixed_priority": "unknown"
+    }
+  ],
+  "supplementary_engines": [
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "entry": "https://chat.deepseek.com/",
+      "questionnaire_status": "blocked_login",
+      "official_reference": "https://cdn.deepseek.com/policies/zh-CN/deepseek-terms-of-use.html",
+      "source_note": "官方确认联网公开信息；消费端具体来源本轮未测",
+      "source_links": []
+    },
+    {
+      "id": "kimi",
+      "name": "Kimi",
+      "entry": "https://www.kimi.com/",
+      "questionnaire_status": "blocked_login",
+      "official_reference": "https://www.kimi.com/help/features/search",
+      "source_note": "官方列政府/媒体/学术/财报，以及天眼查、同花顺iFinD、世界银行专业库；属于能力说明，不是默认引用排名",
+      "source_links": [
+        {
+          "platform_ids": [
+            "tianyancha",
+            "gov_academic"
+          ],
+          "evidence_basis": "official_consumer",
+          "surface": "consumer_web",
+          "evidence_reference": "https://www.kimi.com/help/features/search",
+          "note": "按实际权限开启专业数据库"
+        }
+      ]
+    }
+  ]
+}

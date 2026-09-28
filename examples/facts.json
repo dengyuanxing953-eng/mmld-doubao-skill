@@ -1,0 +1,12 @@
+{
+  "entity_name": "示例线上服务",
+  "intent": "售后入口核验说明",
+  "facts": {
+    "service_scope": {
+      "value": "线上内容服务",
+      "source_ref": "人工核对的示例公开说明（演示数据）",
+      "checked_at": "2026-09-28",
+      "public_use_allowed": true
+    }
+  }
+}

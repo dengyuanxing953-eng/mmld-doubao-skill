@@ -1,0 +1,6 @@
+interface:
+  display_name: "GEO 图文发布执行"
+  short_description: "按现有授权和账号范围执行差异化图文发布，核对图片、正文与真实回执"
+  default_prompt: "Use $geo-multiplatform-workflow to prepare differentiated illustrated posts and publish only to authorized usable accounts with verified receipts."
+policy:
+  allow_implicit_invocation: true
